@@ -27,4 +27,12 @@ module RandomData
     letters.shuffle!
     letters[0,rand(3..8)].join
   end
+
+  def self.ad_price
+    rand(1..100)
+  end
+
+  def self.random_sponsored_post_price
+    rand(1..1000)
+  end
 end
