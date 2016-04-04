@@ -31,4 +31,9 @@ module RandomData
     rand(1..500000).times do
       sentences << random_sentence
   end
+  
+  def self.random_integer
+    rand(1..100)
+  end
+
 end
