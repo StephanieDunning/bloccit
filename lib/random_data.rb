@@ -1,7 +1,6 @@
-#5
 module RandomData
-#6
-  def self.random_paragraph
+
+  def random_paragraph
     sentences = []
     rand(4..6).times do
       sentences << random_sentence
@@ -10,8 +9,7 @@ module RandomData
     sentences.join(" ")
   end
 
-  #7
-  def self.random_sentence
+  def random_sentence
     strings = []
     rand(3..8).times do
       strings << random_word
@@ -21,14 +19,13 @@ module RandomData
     sentence.capitalize << "."
   end
 
-  #8
-  def self.random_word
+  def random_word
     letters = ('a'..'z').to_a
     letters.shuffle!
     letters[0,rand(3..8)].join
   end
 
-  def self.random_integer
+  def random_integer
     rand(1..100)
   end
 end
