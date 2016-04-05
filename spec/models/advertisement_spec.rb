@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Advertisement, type: :model do
-  let (:advertisement) { Advertisement.create! }
+  let (:advertisement) { Advertisement.create!(title: 'New Advertisement Title', copy: 'New Advertisement Copy', price: 100) }}
 
   describe "attributes" do
     it "should respond to title" do
