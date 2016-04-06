@@ -1,6 +1,5 @@
-require 'random_data'
+include RandomData
 
-# Create Posts
 50.times do
   Post.create!(
     title: RandomData.random_sentence,
@@ -12,7 +11,7 @@ posts = Post.all
 50.times do
   Advertisement.create!(
     title: RandomData.random_sentence,
-    body: RandomData.random_paragraph
+    copy: RandomData.random_paragraph,
     price: RandomData.random_integer
   )
 end
@@ -27,3 +26,4 @@ end
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+puts "#{Advertisement.count} comments created"
