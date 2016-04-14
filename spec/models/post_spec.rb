@@ -16,8 +16,13 @@ RSpec.describe Post, type: :model do
   it { should validate_length_of(:body).is_at_least(20) }
 
   describe "attributes" do
-    it "has a title, body, and user attribute" do
-      expect(post).to have_attributes(title: title, body: body, user: user)
+
+    it "should respond to title" do
+      expect(post).to respond_to(:title)
+    end
+
+    it "should respond to body" do
+      expect(post).to respond_to(:body)
     end
   end
 end
