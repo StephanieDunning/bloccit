@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
+      @post.labels = Label.update_labels(params[:post][:labels])
       flash[:notice] = "Post was saved."
       redirect_to [@topic, @post]
     else
@@ -34,6 +35,7 @@ class PostsController < ApplicationController
     @post.assign_attributes(post_params)
 
     if @post.save
+      @post.labels = Label.update_labels(params[:post][:labels])
       flash[:notice] = "Post was updated."
       redirect_to [@post.topic, @post]
     else
@@ -61,7 +63,6 @@ class PostsController < ApplicationController
 
   def authorize_user
     post = Post.find(params[:id])
-
     unless current_user == post.user || current_user.admin?
       flash[:alert] = "You must be an admin to do that."
       redirect_to [post.topic, post]
